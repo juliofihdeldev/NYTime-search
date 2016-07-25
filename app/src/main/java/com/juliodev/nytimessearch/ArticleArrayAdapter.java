@@ -35,7 +35,14 @@ public class ArticleArrayAdapter extends ArrayAdapter<Article> {
         // Clear the recycle image from convertView from last time
         imageView.setImageResource(0);
         TextView tvTitle = (TextView) convertView.findViewById(R.id.tvTitle);
+        TextView tvCategorie = (TextView) convertView.findViewById(R.id.categorie);
         tvTitle.setText(article.getHeadLine());
+
+        if(article.getCategorie() != "null" &&  article.getCategorie() != "None"){
+            tvCategorie.setText(article.getCategorie());
+        }else {
+            tvCategorie.setText("");
+        }
         // populate the thumbNail images
         // remote download image in background
         String thumbNail = article.getThumNail();
