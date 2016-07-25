@@ -26,12 +26,18 @@ public class Article implements Serializable {
         return thumNail;
     }
 
+    public String getCategorie() {
+        return categorie;
+    }
+
+    String categorie;
     String headLine;
     String thumNail;
 
     public  Article (JSONObject jsonObject){
         try {
             this.webUrl=jsonObject.getString("web_url");
+            this.categorie=jsonObject.getString("news_desk");
             this.headLine= jsonObject.getJSONObject("headline").getString("main");
             JSONArray multimedia = jsonObject.getJSONArray("multimedia");
 

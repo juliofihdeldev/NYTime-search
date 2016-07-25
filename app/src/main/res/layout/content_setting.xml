@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="60dp">
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.juliodev.nytimessearch.activties.Setting"
+    tools:showIn="@layout/activity_setting">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Begin Date"
+        android:id="@+id/textView"
+        android:layout_marginTop="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/edtMydate"
+        android:layout_below="@+id/textView"
+        android:onClick="showDatePickerDialog"
+        android:layout_alignLeft="@+id/txSortOrder"
+        android:layout_alignStart="@+id/txSortOrder" />
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Sort Order"
+        android:id="@+id/txSortOrder"
+        android:layout_marginTop="60dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:drawableTop="@android:color/holo_green_dark"
+        android:drawableBottom="@android:color/holo_green_dark" />
+
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="100dp"
+        android:id="@+id/radioGroup">
+
+        <RadioButton android:id="@+id/radio_older"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Older"
+        android:onClick="onRadioButtonClicked"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="46dp" />
+        <RadioButton android:id="@+id/radio_newest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Newest"
+            android:layout_marginTop="45dp"
+            android:layout_marginLeft="10dp"
+            android:onClick="onRadioButtonClicked"
+            android:layout_alignBottom="@+id/radioGroup"
+            android:layout_alignRight="@+id/txSortOrder"
+           />
+    </RadioGroup>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="56dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout"
+        android:layout_below="@+id/radioGroup"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="News Desk values"
+            android:id="@+id/txNwesDesk"
+            android:layout_alignTop="@+id/linearLayout"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="40dp" />
+
+        <CheckBox android:id="@+id/art"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Art"
+            android:onClick="onCheckboxClicked"
+            android:layout_below="@+id/txNwesDesk"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp" />
+
+        <CheckBox android:id="@+id/sport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sport"
+            android:onClick="onCheckboxClicked"
+            android:layout_below="@+id/art"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="40dp" />
+
+        <CheckBox android:id="@+id/fashion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fashion"
+            android:onClick="onCheckboxClicked"
+            android:checked="false"
+            android:layout_below="@+id/sport"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="40dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:id="@+id/saveSearch"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textColor="#ffffff"
+            android:padding="5dp"
+            android:background="#3F51B5"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="40dp"
+            android:onClick="submitFormulaire"/>
+    </LinearLayout>
+
+</RelativeLayout>
+</ScrollView>
